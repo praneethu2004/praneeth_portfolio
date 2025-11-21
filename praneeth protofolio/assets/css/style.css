@@ -1,0 +1,87 @@
+:root{
+  --brand: #0d6efd;
+  --muted: #6c757d;
+  --accent: #6f42c1;
+  --gradient-start: #4f46e5;
+  --gradient-end: #06b6d4;
+}
+
+/* Base */
+body{
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: #f8fafc;
+  color: #111827;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+a { text-decoration: none; }
+
+/* Navbar */
+.navbar { padding: 0.8rem 0; }
+.navbar-brand{ color:var(--brand); font-size:1.15rem; letter-spacing:0.2px; }
+.nav-link { color: #374151; margin-left: .6rem; }
+.nav-link.active { font-weight:600; color: #111827; }
+
+/* Hero Gradient */
+.hero-gradient{
+  background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  padding-top:4.5rem;
+  padding-bottom:4.5rem;
+  border-radius: 0 0 32px 32px;
+  position: relative;
+  overflow: hidden;
+}
+.hero-gradient::after{
+  content: '';
+  position: absolute;
+  right: -120px;
+  top: -60px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), transparent 40%);
+  transform: rotate(25deg);
+}
+
+/* Feature pills */
+.feature-pill{
+  background: rgba(255,255,255,0.12);
+  color: white;
+  padding: .4rem .8rem;
+  border-radius: 999px;
+  font-size: .9rem;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.08);
+}
+
+/* Card stack (decorative) */
+.card-stack{ display:flex; gap:12px; flex-direction:column; align-items:flex-end; }
+.card-stack-card{
+  width: 220px;
+  border-radius: 12px;
+  color: #111827;
+  background: white;
+  box-shadow: 0 10px 30px rgba(2,6,23,0.12);
+  transform: rotate(-6deg);
+}
+.card-stack-card-2{ transform: rotate(-2deg); margin-top:-24px; }
+.card-stack-card-3{ transform: rotate(2deg); margin-top:-24px; }
+
+/* Features section */
+.icon-circle{
+  width:56px;height:56px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 8px 20px rgba(2,6,23,0.06);
+}
+
+/* Cards */
+.card { border-radius: .75rem; }
+
+/* Footer */
+footer { font-size: .9rem; }
+
+/* Responsive tweaks */
+@media (max-width: 991px){
+  .card-stack{ display:none; }
+  .hero-gradient{ border-radius: 0; padding-bottom:3rem; }
+}
+
+/* Personal tweaks */
+.hero-gradient .display-4{line-height:1.05}
+.feature-pill{font-weight:600}
